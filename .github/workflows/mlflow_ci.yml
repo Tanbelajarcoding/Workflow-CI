@@ -59,7 +59,7 @@ jobs:
           # Ini adalah placeholder - sesuaikan dengan struktur MLflow Anda
 
       - name: Upload artifacts to GitHub
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: model-artifacts-${{ github.run_number }}
           path: model_artifacts/

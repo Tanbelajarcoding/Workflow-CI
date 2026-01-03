@@ -90,13 +90,13 @@ jobs:
           echo "docker pull ${{ env.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:latest" >> docker_hub_url.txt
 
       - name: Upload Docker URL as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docker-hub-info
           path: docker_hub_url.txt
 
       - name: Upload model artifacts to GitHub
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: model-artifacts-${{ github.run_number }}
           path: |
