@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1767488718539
+current_stage: None
+description: null
+last_updated_timestamp: 1767488718539
+name: credit-card-fraud-detection
+run_id: 1327a727d5b84dbba791710fbcc889ab
+run_link: null
+source: file:///C:/Users/sutaa/Downloads/Submisi-Sulthan/Workflow-CI/MLProject/mlruns/0/1327a727d5b84dbba791710fbcc889ab/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///C:/Users/sutaa/Downloads/Submisi-Sulthan/Workflow-CI/MLProject/mlruns/0/1327a727d5b84dbba791710fbcc889ab/artifacts/model
+user_id: null
+version: 1

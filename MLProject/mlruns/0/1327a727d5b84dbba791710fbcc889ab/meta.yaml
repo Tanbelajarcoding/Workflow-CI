@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/sutaa/Downloads/Submisi-Sulthan/Workflow-CI/MLProject/mlruns/0/1327a727d5b84dbba791710fbcc889ab/artifacts
+end_time: 1767488718569
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1327a727d5b84dbba791710fbcc889ab
+run_name: MLProject_CreditCard_Fraud
+run_uuid: 1327a727d5b84dbba791710fbcc889ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767488677684
+status: 3
+tags: []
+user_id: sutaa
