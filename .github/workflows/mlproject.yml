@@ -23,19 +23,20 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mlflow==2.19.0
-          pip install scikit-learn pandas numpy
+          pip install scikit-learn pandas numpy imbalanced-learn
 
-      - name: List files
+      - name: Verify dataset exists
         run: |
-          echo "=== Repository Structure ==="
-          ls -la
-          echo "=== MLProject folder ==="
+          echo "=== Checking Dataset in MLProject ==="
           ls -la MLProject/
+          echo "=== Dataset files ==="
+          ls -la MLProject/*.csv
 
       - name: Run MLflow Project
         run: |
-          cd MLProject
-          mlflow run . --no-conda
+          echo "=== Starting MLflow Project ==="
+          mlflow run MLProject --env-manager=local
+          echo "=== MLflow Project Complete ==="
 
       - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v4
