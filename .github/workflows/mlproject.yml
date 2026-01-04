@@ -1,4 +1,4 @@
-name: MLProject Training CI
+name: CI
 
 on:
   push:
