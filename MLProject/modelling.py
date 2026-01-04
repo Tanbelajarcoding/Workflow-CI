@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 def load_data(train_path, test_path):
     """Load training and testing data"""
-    print(f"📁 Loading data...")
+    print("Loading data...")
     print(f"   Train: {train_path}")
     print(f"   Test: {test_path}")
     
@@ -36,8 +36,8 @@ def load_data(train_path, test_path):
     X_test = test_data.drop('Class', axis=1)
     y_test = test_data['Class']
     
-    print(f"✓ Train: {X_train.shape}, Test: {X_test.shape}")
-    print(f"✓ Train labels: {y_train.value_counts().to_dict()}")
+    print(f"Train: {X_train.shape}, Test: {X_test.shape}")
+    print(f"Train labels: {y_train.value_counts().to_dict()}")
     
     return X_train, X_test, y_train, y_test
 
@@ -45,7 +45,7 @@ def load_data(train_path, test_path):
 def train_model(X_train, X_test, y_train, y_test, params):
     """Train model with given parameters"""
     print("\n" + "="*70)
-    print("🚀 MLFLOW PROJECT - CREDIT CARD FRAUD DETECTION")
+    print("MLFLOW PROJECT - CREDIT CARD FRAUD DETECTION")
     print("="*70)
     
     # MLflow autolog
@@ -54,13 +54,13 @@ def train_model(X_train, X_test, y_train, y_test, params):
     with mlflow.start_run(run_name="MLProject_CreditCard_Fraud"):
         
         # Log parameters
-        print("\n📝 Logging parameters...")
+        print("\nLogging parameters...")
         for key, value in params.items():
             mlflow.log_param(key, value)
         mlflow.log_param("model_type", "RandomForestClassifier")
         
         # Create and train model
-        print("\n🔧 Training model...")
+        print("\nTraining model...")
         
         # Parse class_weight
         class_weight_val = params['class_weight']
@@ -86,14 +86,14 @@ def train_model(X_train, X_test, y_train, y_test, params):
         model.fit(X_train, y_train)
         
         # Predictions
-        print("\n🔮 Making predictions...")
+        print("\nMaking predictions...")
         y_pred = model.predict(X_test)
         y_pred_proba = model.predict_proba(X_test)
         
         y_train_pred = model.predict(X_train)
         
         # Calculate metrics
-        print("\n📊 Calculating metrics...")
+        print("\nCalculating metrics...")
         
         # Test metrics
         test_accuracy = accuracy_score(y_test, y_pred)
@@ -120,7 +120,7 @@ def train_model(X_train, X_test, y_train, y_test, params):
         
         # Print results
         print("\n" + "="*70)
-        print("📈 TRAINING RESULTS")
+        print("TRAINING RESULTS")
         print("="*70)
         print(f"Training Accuracy: {train_accuracy:.4f}")
         print(f"Training F1 Score: {train_f1:.4f}")
@@ -133,10 +133,10 @@ def train_model(X_train, X_test, y_train, y_test, params):
         print("="*70)
         
         # Save model
-        print("\n💾 Saving model...")
+        print("\nSaving model...")
         mlflow.sklearn.log_model(model, "model", registered_model_name="credit-card-fraud-detection")
         
-        print("\n✅ Training completed successfully!")
+        print("\nTraining completed successfully!")
         
         return model
 
@@ -185,4 +185,4 @@ if __name__ == "__main__":
     # Train model
     model = train_model(X_train, X_test, y_train, y_test, params)
     
-    print("\n🎉 MLflow Project execution completed!")
+    print("\nMLflow Project execution completed!")
